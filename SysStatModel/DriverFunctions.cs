@@ -9,7 +9,7 @@ namespace SysStatModel
 {
     class DriverFunctions
     {
-        private const int sizeOfGraphXAxis = 10;
+        public const int sizeOfGraphXAxis = 60;
         private const double KILOBYTE = (1 << 10);
         private const double MEGABYTE = (1 << 20);
         private const double GIGABYTE = (1 << 30);
@@ -66,7 +66,7 @@ namespace SysStatModel
             CPUData cpu = new CPUData();
             return cpu.retrieveCPUName();
         }
-        public static Tuple<double,double, double> getCPUStats()
+        public static Tuple<double,double> getCPUStats()
         {
             CPUData cpuData = new CPUData();
             return cpuData.getCPUStats();

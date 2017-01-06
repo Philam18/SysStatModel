@@ -339,6 +339,7 @@
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
             series2.ChartArea = "ChartArea1";
             series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.SplineArea;
+            series2.Color = System.Drawing.Color.Transparent;
             series2.Name = "Series1";
             series2.YValuesPerPoint = 4;
             this.chart1.Series.Add(series2);
@@ -612,11 +613,11 @@
             // testLabel
             // 
             this.testLabel.AutoSize = true;
-            this.testLabel.Location = new System.Drawing.Point(28, 19);
+            this.testLabel.Location = new System.Drawing.Point(13, 11);
             this.testLabel.Name = "testLabel";
-            this.testLabel.Size = new System.Drawing.Size(71, 13);
+            this.testLabel.Size = new System.Drawing.Size(62, 13);
             this.testLabel.TabIndex = 6;
-            this.testLabel.Text = "TEST LABEL";
+            this.testLabel.Text = "debug label";
             // 
             // SysStatUI
             // 

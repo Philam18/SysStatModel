@@ -40,11 +40,10 @@ namespace SysStatModel
             }
             return name;
         }
-        public Tuple<double,double, double> getCPUStats()
+        public Tuple<double,double> getCPUStats()
         {
             double maxClock = 0;
             double currentClock = 0;
-            double cpuLoad = 0;
             string query;
             query = "SELECT MaxClockSpeed FROM Win32_Processor";
             cpuInfo = new ManagementObjectSearcher(query);
@@ -58,13 +57,8 @@ namespace SysStatModel
             {
                 currentClock = Convert.ToDouble(item.Properties["CurrentClockSpeed"].Value);
             }
-            query = "SELECT LoadPercentage FROM Win32_Processor";
-            cpuInfo = new ManagementObjectSearcher(query);
-            foreach (ManagementObject item in cpuInfo.Get())
-            {
-                cpuLoad = Convert.ToDouble(item.Properties["LoadPercentage"].Value);
-            }
-            return Tuple.Create(maxClock,currentClock,cpuLoad);
+
+            return Tuple.Create(maxClock,currentClock);
         }
 
         /*

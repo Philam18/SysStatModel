@@ -35,8 +35,9 @@ namespace SysStatModel
         }
         private void getCPUStats()
         {
-            Tuple<double, double, double> list = DriverFunctions.getCPUStats();
-            testLabel.Text = Convert.ToString(list.Item1);
+            Tuple<double, double> list = DriverFunctions.getCPUStats();
+            group3Label2.Text = Convert.ToString(list.Item1);
+            group3Label4.Text = Convert.ToString(list.Item2);
         }
         /***********************************************************************/
         private void getRAMInfo()
@@ -119,14 +120,14 @@ namespace SysStatModel
             forceTimerFire();
             //initiate all chart properties to host usage-graph
             this.chart1.ChartAreas["ChartArea1"].AxisX.Minimum = 1;
-            this.chart1.ChartAreas["ChartArea1"].AxisX.Maximum = 10;
+            this.chart1.ChartAreas["ChartArea1"].AxisX.Maximum = DriverFunctions.sizeOfGraphXAxis;
             this.chart1.ChartAreas["ChartArea1"].AxisX.Interval = 10;
             this.chart1.ChartAreas["ChartArea1"].AxisY.Minimum = 0;
             this.chart1.ChartAreas["ChartArea1"].AxisY.Maximum = 100;
             this.chart1.ChartAreas["ChartArea1"].AxisY.Interval = 20;
             this.chart1.Series["Series1"].Color = Color.DarkGreen;
             this.chart2.ChartAreas["ChartArea1"].AxisX.Minimum = 1;
-            this.chart2.ChartAreas["ChartArea1"].AxisX.Maximum = 10;
+            this.chart2.ChartAreas["ChartArea1"].AxisX.Maximum = DriverFunctions.sizeOfGraphXAxis;
             this.chart2.ChartAreas["ChartArea1"].AxisX.Interval = 10;
             this.chart2.ChartAreas["ChartArea1"].AxisY.Minimum = 0;
             this.chart2.ChartAreas["ChartArea1"].AxisY.Maximum = 100;
